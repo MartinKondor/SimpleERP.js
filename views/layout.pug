@@ -1,0 +1,120 @@
+doctype html
+html(lang='en')
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(http-equiv='content-type', content='text/html; charset=utf-8')
+        meta(charset='UTF-8')
+        meta(name='description', content='')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='application-name', content='')
+        meta(name='keywords', content='')
+        meta(name='description', content='')
+        link(rel='canonical', href='')
+        meta(property='og:url', content='')
+        meta(property='og:type', content='website')
+        meta(property='og:title', content= title)
+        meta(property='og:description', content='')
+        title= title
+        link(rel='icon', href='/images/favicon.ico?v=1')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous")
+        link(href='/lib/bootstrap.min.css', rel='stylesheet', type='text/css')
+        link(href='/css/index.css?v=11', rel='stylesheet', type='text/css')
+        link(href='/css/mobile.css?v=1', rel='stylesheet', type='text/css')
+        block styles
+    body
+        - function capText(text, length) {
+        -   var capped = text.slice(0, length);
+        -   if (capped.length == text.length) {
+        -      return capped;
+        -   } else {
+        -      return capped + "...";
+        -   } 
+        - }
+
+        - function capFileName(fullPath) {
+        -   return fullPath.includes("/") ? fullPath.split("/").pop() : fullPath; 
+        - }
+
+        div
+            nav.navbar.navbar-expand-lg.text-left
+                .container-fluid
+                    button#navbarTogglerButton.w-100.navbar-toggler.btn-lg.mb-2(type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                        span.navbar-toggler-icon
+                        span.ms-1 Menu
+
+                    .collapse.navbar-collapse#navbarNav
+                        ul.navbar-nav.mb-auto.text-center
+                            if !user
+                                span
+
+                            if user
+                                li.nav-item
+                                    a.nav-link(href=n2r["get-index"])
+                                        img(src="/images/favicon.png", width="35", height="auto")
+
+                                if user.isAdmin || user.isEmployee
+                                    li.nav-item
+                                        a.nav-link.py-3(href=n2r["get-calendar"], data-bs-toggle="tooltip", data-bs-placement="right", title="Naptár")
+                                            i.fa-solid.fa-calendar-alt
+                                            span.ms-1 Calendar 
+                                    li.nav-item
+                                        a.nav-link.py-3(href=n2r["get-contacts"], data-bs-toggle="tooltip", data-bs-placement="right", title="Névjegyek")
+                                            i.fa-solid.fa-address-card 
+                                            span.ms-1 Contacts
+                                    
+                                    li.nav-item
+                                        a.nav-link.py-3(href=n2r["get-projects"], data-bs-toggle="tooltip", data-bs-placement="right", title="Projektek")
+                                            i.fa-solid.fa-file-edit
+                                            span.ms-1 Projects
+
+                                li.nav-item
+                                    a.nav-link.py-3(href=n2r["get-employees"], data-bs-toggle="tooltip", data-bs-placement="right", title="Munkatársak kezelése")
+                                        i.fa-solid.fa-user
+                                        span.ms-1 Employees
+                                
+                                if user.isAdmin || user.isEmployee
+                                    li.nav-item.fw-bold
+                                        a.nav-link.py-3(href=n2r["get-worksheets"], data-bs-toggle="tooltip", data-bs-placement="right", title="Jelenléti ívek kezelése")
+                                            i.fa-solid.fa-file
+                                            span.ms-1 Worksheets
+                                
+                                if user.isAdmin
+                                    li.nav-item
+                                        a.nav-link.py-3(href=n2r["get-companies"], data-bs-toggle="tooltip", data-bs-placement="right", title="Megrendelők kezelése")
+                                            i.fa-solid.fa-building
+                                            span.ms-1 Companies
+                                    li.nav-item
+                                        a.nav-link.py-3(href=n2r["get-offers"], data-bs-toggle="tooltip", data-bs-placement="right", title="Árajánlatok kezelése")
+                                            i.fa-solid.fa-cash-register
+                                            span.ms-1 Offers
+                                
+                                li.nav-item
+                                    a.nav-link.py-3(href=n2r["get-signout"], data-bs-toggle="tooltip", data-bs-placement="right", title="Kijelentkezés")
+                                        .fa-solid.fa-sign-out-alt
+                                        span.ms-1 Signout
+
+            main
+                if messages
+                    .messages-container.row.justify-content-center
+                        .messages-box
+                            for message in messages
+                                if message.hasOwnProperty("type")
+                                    .alert.text-center.fw-bold.mt-1(class="alert-" + message.type)
+                                        if (message.type == "danger")
+                                            i.fa-solid.fa-circle-exclamation
+                                        else if (message.type == "success")
+                                            i.fa-solid.fa-circle-check
+                                        else 
+                                            i.fa-solid.fa-info-circle
+                                        span.ms-2= message.msg
+                                else
+                                    .alert.alert-warning.text-center.fw-bold.mt-1
+                                        i.fas.fa-info-circle
+                                        span.ms-2= message
+
+                block content
+            
+        script(src='/lib/jquery.min.js')
+        script(src='/lib/bootstrap.min.js')
+        script(src="/js/index.js?v=1", type="text/javascript")
+        block scripts

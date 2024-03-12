@@ -1,0 +1,19 @@
+{
+    "get-signin": "signin",
+    "get-calendar": "calendar",
+    "get-contact": "contact",
+    "get-contacts": "contacts",
+    "get-project": "project",
+    "get-projects": "projects",
+    "get-employee": "employee",
+    "get-employees": "employees",
+    "get-offer": "offer",
+    "get-offers": "offers",
+    "get-company": "company",
+    "get-companies": "companies",
+    "get-worksheet": "worksheet",
+    "get-worksheets": "worksheets",
+    "get-forgot": "forgot",
+    "get-index": "index"
+}
+

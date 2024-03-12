@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(http-equiv='content-type', content='text/html; charset=utf-8')
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title SimpleERP
+        link(rel='icon', href='/images/favicon.ico?v=1')
+        link(href='/lib/bootstrap.min.css', rel='stylesheet', type='text/css')
+    body
+        if messages
+            .row.justify-content-center
+                .col-md-4.messages-box
+                    for message in messages
+                        if message.hasOwnProperty("type")
+                            .alert.text-center.fw-bold.mt-2(class="alert-" + message.type)
+                                if (message.type == "danger")
+                                    i.fa-solid.fa-circle-exclamation
+                                else if (message.type == "success")
+                                    i.fa-solid.fa-circle-check
+                                else 
+                                    i.fa-solid.fa-circle
+                                span.ms-2= message.msg
+                        else
+                            .alert.alert-warning.text-center.fw-bold.mt-2
+                                i.fas.fa-info-circle
+                                span.ms-2= message
+
+        .container.mt-3
+            .row.justify-content-center
+                .col-md-4
+                    .text-center.mb-4
+                        img(src="/images/logo.jpeg", alt="YourCompany Inc." width="175px")
+
+                    form(action=n2r['post-signin'], method='post')
+                        .form-group
+                            label(for='email').fw-bold.mb-1 Email:
+                            input(type='email', id='email', name='email', class='form-control', required="", value='')
+                        .form-group.mt-3
+                            label(for='password').fw-bold.mb-1 Password:
+                            input(type='password', id='password', name='password', class='form-control', required="", value='')
+                        .text-center
+                            button(type='submit').btn.btn-secondary.btn-lg.fw-bold.mt-3 Signin
+                            br
+                            br
+                            a(href=n2r['get-forgot']).mt-5 Recover My Password
+
+        p.mt-2.text-muted.text-center &copy; YourCompany Inc.

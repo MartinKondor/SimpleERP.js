@@ -1,0 +1,226 @@
+:root {
+    --main-color: #f12828;
+    --main-color-hover: #c72020;
+
+    --main-color-alt: #b5f128;
+    --main-color-hover-alt: #85af24;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height: 1;
+    background-color: #fff; /* Dark background color */
+    color: #333; /* Light text color */
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+    color: #333; /* Light text color */
+}
+
+nav ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    color: #6f7d8c; /* Light link color */
+}
+
+/* change colors to suit your needs */
+ins {
+    background-color: #555; /* Dark background color */
+    color: #fff; /* Light text color */
+    text-decoration: none;
+}
+
+/* change colors to suit your needs */
+mark {
+    background-color: #555; /* Dark background color */
+    color: #fff; /* Light text color */
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #fff; /* Light text color */
+}
+
+/* change border color to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #666; /* Dark border color */
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    color: #66d9ef; /* Light code color */
+}
+
+main {
+    padding: 20px;
+}
+
+.bg-dark {
+    background-color: rgb(31,31,31) !important;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="file"],
+select,
+textarea,
+.alert,
+.btn,
+Button {
+    border-radius: 1px !important;
+}
+
+.admin-icon > i {
+    color: rgb(202, 162, 59) !important;
+}
+
+nav {
+    width: 100%;
+    box-shadow: 0px 0px 15px rgb(155, 155, 155);
+}
+
+.btn-primary {
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+}
+
+.btn-primary::after,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: var(--main-color-hover) !important;
+    border-color: var(--main-color-hover) !important;
+}
+
+.btn-primary-alt {
+    background-color: var(--main-color-alt) !important;
+    border-color: var(--main-color-alt) !important;
+}
+
+.btn-primary-alt::after,
+.btn-primary-alt:hover,
+.btn-primary-alt:active,
+.btn-primary-alt:focus {
+    background-color: var(--main-color-alt-hover) !important;
+    border-color: var(--main-color-alt-hover) !important;
+}
+
+p {
+    font-size: 18px;   
+}
+
+.cus-bg-dark {
+    background-color: #6c757d;
+}
+
+.messages-box {
+    overflow-wrap: break-word;
+    animation: fadeOut 2s linear 15s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0; 
+        display: none;
+    }
+}
+
+table {
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.attachment-list {
+    background-color: #fafafa;
+    box-shadow: 0px 0px 2px #747474 inset;
+    padding: 5px;
+    min-height: 50px;
+}
+
+.attachment-list li {
+    font-weight: bold;
+    border-bottom: 1px solid #bebebe;
+    padding: 7px;
+}
+
+.only-mobile {
+    display: none;
+}

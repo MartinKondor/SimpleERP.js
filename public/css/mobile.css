@@ -1,0 +1,28 @@
+@media screen and (max-width: 600px) {
+
+    .non-mobile {
+        display: none !important;
+    }
+
+    nav {
+        width: 100vw !important;
+        margin-bottom: 20px;
+    }
+
+    main,
+    body {
+        padding: 2px;
+    }
+
+    .nav-item {
+        font-size: 22px;
+    }
+    
+    .day-col {
+        min-height: 0px !important;
+    }
+
+    .only-mobile {
+        display: block;
+    }
+}
