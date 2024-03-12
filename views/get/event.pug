@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+    h1.h1.fw-bold.mt-2.mb-4
+        span= event.name
+        
+        if user.isAdmin 
+            - var editUrl = n2r["get-modify-event"] + "?id=" + event.id;
+            include ../fragments/edit_btn
+
+    .row.event-card
+        .col-sm
+            p.m-0.mt-3
+                p.fw-bold.h4 Date:
+                p= new Date(event.date).toLocaleString('hu-HU', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' })
+            p.m-0.mt-3
+                p.fw-bold.h4 Description:
+                if !event.description
+                    p
+                        i None
+                else 
+                    p= event.description
+                    
+        .col-sm
+            p.m-0.mt-3
+                p.fw-bold.h4 Project:
+                
+                if !event.project_id
+                    p 
+                        i No project is attached to this event.
+                else
+                    p
+                        span.h5 Description: 
+                        span= event.projekt_description
+                    p
+                        span.h5 Deadline: 
+                        span= new Date(event.project_deadline).toLocaleString("hu-HU", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+                    p
+                        span.h5 Status: 
+                        span= event.project_status
+                    
+                    a.btn.btn-secondary.mt-3(href=n2r["get-project"] + "?id=" + event.project_id) Show more

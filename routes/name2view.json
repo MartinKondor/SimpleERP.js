@@ -1,19 +1,41 @@
 {
     "get-signin": "signin",
     "get-calendar": "calendar",
-    "get-contact": "contact",
     "get-contacts": "contacts",
-    "get-project": "project",
     "get-projects": "projects",
-    "get-employee": "employee",
     "get-employees": "employees",
-    "get-offer": "offer",
     "get-offers": "offers",
-    "get-company": "company",
     "get-companies": "companies",
-    "get-worksheet": "worksheet",
     "get-worksheets": "worksheets",
     "get-forgot": "forgot",
-    "get-index": "index"
+    "get-index": "index",
+
+    "get-company": "get/company",
+    "get-add-company": "add/company",
+    "get-modify-company": "modify/company",
+
+    "get-offer": "get/offer",
+    "get-add-offer": "add/offer",
+    "get-modify-offer": "modify/offer",
+
+    "get-worksheet": "get/worksheet",
+    "get-add-worksheet": "add/event",
+    "get-modify-worksheet": "modify/event",
+    
+    "get-event": "get/event",
+    "get-add-event": "add/event",
+    "get-modify-event": "modify/event",
+
+    "get-project": "get/project",
+    "get-add-project": "add/project",
+    "get-modify-project": "modify/project",
+
+    "get-contact": "get/contact",
+    "get-add-contact": "add/contact",
+    "get-modify-contact": "modify/contact",
+
+    "get-employee": "get/employee",
+    "get-add-employee": "add/employee",
+    "get-modify-employee": "modify/employee"
 }
 

@@ -3,19 +3,55 @@
     "post-signin": "/signin",
     "get-signout": "/signout",
     "get-calendar": "/calendar",
-    "get-contact": "/contact",
     "get-contacts": "/contacts",
-    "get-project": "/project",
     "get-projects": "/projects",
-    "get-employee": "/employee",
     "get-employees": "/employees",
-    "get-offer": "/offer",
     "get-offers": "/offers",
-    "get-company": "/company",
     "get-companies": "/companies",
-    "get-worksheet": "/worksheet",
     "get-worksheets": "/worksheets",
     "get-forgot": "/forgot",
-    "get-index": "/"
+    "get-index": "/",
+
+    "get-worksheet": "/worksheet",
+    "get-modify-worksheet": "/modify/worksheet",
+    "post-modify-worksheet": "/modify/worksheet",
+    "get-add-worksheet": "/add/worksheet",
+    "post-add-worksheet": "/add/worksheet",
+    
+    "get-offer": "/offer",
+    "get-modify-offer": "/modify/offer",
+    "post-modify-offer": "/modify/offer",
+    "get-add-offer": "/add/offer",
+    "post-add-offer": "/add/offer",
+    
+    "get-company": "/company",
+    "get-modify-company": "/modify/company",
+    "post-modify-company": "/modify/company",
+    "get-add-company": "/add/company",
+    "post-add-company": "/add/company",
+    
+    "get-project": "/project",
+    "get-modify-project": "/modify/project",
+    "post-modify-project": "/modify/project",
+    "get-add-project": "/add/project",
+    "post-add-project": "/add/project",
+
+    "get-event": "/event",
+    "get-modify-event": "/modify/event",
+    "post-modify-event": "/modify/event",
+    "get-add-event": "/add/event",
+    "post-add-event": "/add/event",
+
+    "get-employee": "/employee",
+    "get-modify-employee": "/modify/employee",
+    "post-modify-employee": "/modify/employee",
+    "get-add-employee": "/add/employee",
+    "post-add-employee": "/add/employee",
+
+    "get-contact": "/contact",
+    "get-modify-contact": "/modify/contact",
+    "post-modify-contact": "/modify/contact",
+    "get-add-contact": "/add/contact",
+    "post-add-contact": "/add/contact"
 }
 

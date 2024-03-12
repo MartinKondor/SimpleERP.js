@@ -88,6 +88,9 @@ app.use((req, res, next) => {
 
 app.use("/", require("./routes/auth"));
 app.use("/", require("./routes/index"));
+app.use("/", require("./routes/add"));  // /add
+app.use("/", require("./routes/get"));  // /
+app.use("/", require("./routes/modify"));  // /modify
 
 logger.token('host', (req, res) => {
     return req.hostname;

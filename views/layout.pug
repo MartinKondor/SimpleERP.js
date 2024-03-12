@@ -1,3 +1,6 @@
+if !title
+    - title = "SimpleERP.js" 
+
 doctype html
 html(lang='en')
     head
@@ -50,7 +53,7 @@ html(lang='en')
                             if user
                                 li.nav-item
                                     a.nav-link(href=n2r["get-index"])
-                                        img(src="/images/favicon.png", width="35", height="auto")
+                                        img(src="/images/logo.png", width="75", height="auto")
 
                                 if user.isAdmin || user.isEmployee
                                     li.nav-item

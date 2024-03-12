@@ -1,0 +1,46 @@
+extend ../layout
+
+block content
+    .container.mt-3
+        .row.justify-content-center
+            .col-md-5
+                h2.h2.fw-bold.mt-2.mb-4 Modify event
+                form(action=n2r['post-modify-event'], method='post')
+                    input(type="hidden", name="id", value=event.id)
+                    .form-group
+                        label(for='name').mb-1.fw-bold Name / Title:
+                        input(type='name', id='name', name='name', class='form-control', placeholder="", required="", value=event.name)
+                    .form-group.mt-3
+                        label(for='date').mb-1.fw-bold Date:
+                        input(type='datetime-local', id='date', name='date', class='form-control', required="", value="")
+                    .form-group.mt-3
+                        label(for='desc')
+                            span.me-1.mb-1.fw-bold Description
+                            span.text-muted (optional):
+                        textarea(type='text', id='desc', name='desc', class='form-control', placeholder="")= event.description
+                    .form-group.mt-3
+                        label(for='project_id')
+                            span.me-1.mb-1.fw-bold Project
+                            span.text-muted (optional):
+                        select(name="project_id").form-select
+                            option(value="-1", default="")
+                                i Nincs
+                            each project in projects
+                                if project.id == event.project_id
+                                    option(value= project.id, selected)= project.description
+                                else 
+                                    option(value= project.id)= project.description
+                    .text-center.mt-3
+                        include ../fragments/modify_btn
+
+                .text-center.mt-2
+                    hr
+                    - var deleteUrl = '/delete/event';
+                    - var deleteId = event.id;
+                    include ../fragments/delete_form
+
+    script.
+        const utcTimeString = '#{event.date}';
+        const localTimeString = new Date(utcTimeString).toLocaleString('sv-SE', {timeZone: 'CET'});
+        const localTimeWithoutOffset = localTimeString.slice(0, -3);
+        document.getElementById('date').value = localTimeWithoutOffset;

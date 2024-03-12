@@ -37,14 +37,14 @@ AUTH_ROUTE.post(n2r["post-signin"], isNotAuthenticated, async (req, res) => {
                 return res.redirect(selfUrl);
             }
             else {
-                const passwordMatch = await comparePassword(password, user.jelszo);
+                const passwordMatch = await comparePassword(password, user.password);
                 if (!passwordMatch) {
                     req.flash('info', {type: "danger", msg: "Error during signin (103)"});
                     return res.redirect(selfUrl);
                 }
                 else {
                     req.session.user = user;
-                    return res.redirect(n2r["post-index"]);
+                    return res.redirect(n2r["get-index"]);
                 }
             }
         });
